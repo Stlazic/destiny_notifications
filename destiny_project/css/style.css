@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;900&family=Open+Sans:wght@400;500;700&display=swap');
+
+/*********** Applies to all of the pages *************/
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    color: #fff;
+    padding: 0;
+    /* Cool gradient bc destiny uses cool gradients */
+    background: linear-gradient(to top right,black 10%, rgba(112, 128, 144, 1));
+    /* This is the only way to get it to cover the whole page */
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Give the gradient a transparent overlay to make it a little darker and make the content pop */
+body::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+body *{
+    z-index: 1;
+}
+
+/* This applies to all items with the header class */
+.header {
+    /* perhaps #137834 */
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    font-size: 3vh;
+    font-style: normal;
+    text-shadow: black -.7vh 1vh 1vh;
+}
+
+.thanks {
+    font-size: 6vh;
+}
+
+/* Awesome lines again but this time I made it so it doesn't go to the end of the screen*/
+#headerLines::before {
+    content: " ";
+    position: absolute;
+    top: 10%;
+    width: 25%;
+    height: .14vh;
+    background-color: #78dba2;
+    left: 4.5vh;
+}
+
+#headerLines::after {
+    content: " ";
+    position: absolute;
+    top: 10%;
+    width: 25%;
+    height: .14vh;
+    background-color: #78dba2;
+    right: 4.5vh;
+}
+
+/* Most of this only applies to the first opening page but I need to do this because each of the html pages are extremely different from one another */
+.content {
+    position: absolute;
+    display: flex;
+    margin-left: 7vh;
+    margin-right: 65vh;
+    text-shadow: black -.7vh 1vh 1vh;
+}
+
+/* Div for all of the ul tags */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    padding: .8vh;
+    font-size: 2.5vh;
+    line-height: 6vh;
+}
+
+/* UL tag #1 and this one has bullet points */
+.actualList {
+    display: flex;
+    list-style: circle;
+    margin-left:1vw ;
+}
+
+/* Spacing in between each list item */
+.actualList li {
+    margin-right: 4vw;
+}
+
+/* UL tag #2 without bullet points */
+.noBulletPoints {
+    list-style: none;
+}
+
+  .noBulletPoints li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* This is the button on the sign up page. This is the actual button properties and its position */
+#signUpBtn{
+    position: absolute;
+    right: 10%;
+    top: 47%;
+    border: none;
+    background-color: #fff;
+    width: 18vh;
+    height: 10vh;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 3vh;
+    box-shadow: black -.7vh 1vh 1vh;
+}   
+
+#signUpBtn:hover{
+    background-color: #78dba2;
+    cursor: pointer;
+}
+
+/* font size for the little disclaimer and about link */
+#disclaimer{
+    font-size: 2vh;
+}
+
+/*  */
+/* Login/Signin pages */
+/*  */
+
+/* This aligns the form to the center of the page */
+.formContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* This applies to all links on the pages, the home/about links and the "i've already signed up" */
+a{
+    font-size: 15px;
+    color: #78dba2;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* This aligns the content within the form */
+.formContent {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Make the input boxes pretty */
+.inputBox{
+    background-color: #fff;
+    margin-bottom: 2vh;
+    padding: .7vh;
+    border-radius: 8px;
+    box-shadow: black -.7vh 1.4vh 1.4vh;
+}
+
+.inputBox input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px 5px;
+}
+
+/* I have too many css rules that deal with buttons but I want each button to look a specific way so I cant really help it */
+#subBtn {
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    height: 40px;
+    width: 50%;
+    border: none;
+    font-size: 20px;
+}
+
+#subBtn:hover {
+    background-color: #78dba2;
+    cursor: pointer;
+}
+
+
+/*  */
+/* *************Confirmation Page************* */
+/*  */
+
+/* This centers the div and sort of resets it */
+.container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow:black -.7vh 1vh 1vh ;
+}
+/* This sets the values for each of the character emblems that get added, puts the text on top of the photo */
+.character{
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin-bottom: 8px;
+    box-shadow: -5px 3px 10px 0 #000;
+}
+
+/* A little bit more user interaction is always a nice touch */
+.character:hover {
+    transform: scale(1.02);
+    cursor: default;
+}
+
+/* Make the picture a little more responsive to window size */
+.character img {
+    height: 100%;
+    width: 100%;
+}
+
+/* This is specifically for the character class (Hunter Warlock or Titan) and this moves it into position */
+#charType {
+    position: absolute;
+    font-size: 3.5vh;
+    font-weight: 900;
+    top: -10%;
+    right: 6%;
+}
+
+/* This is for light and does the same thing as above but slightly lower */
+#charStat{
+    position: absolute;
+    font-size: 3vh;
+    top: 25%;
+    right: 6%;
+}
+
+/* Make each button in this div the same */
+.btnRow button {
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    height: 35px;
+    width: 60px;
+    border: none;
+    font-size: 15px;
+}
+
+/* add a hover */
+.btnRow button:hover {
+    background-color: #78dba2;
+    cursor: pointer;
+}
+
+.btnRow p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* This div has everything in the page in it i am tired of Divs I am so sorry */
+.anotherDivLol {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #78dba2;
+    margin-top: 4.5vh;
+}
+
+
+/* Content div has the two seperate forms in it, i have the page sectioned off in two big sections, left and right this styles the individual sections a bit */
+.contentDiv {
+    margin: 0;
+    padding: 0;
+    width: 40vw;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+/* This is for the ul containing the checkboxes, this centers them and gets rid of the bullet point */
+.vendorChecks {
+    display: flex;
+    justify-content: center;
+}
+
+/* This is for the actual input boxes, resizes them and makes cursor a pointer, i don't know many css rules for these if im being honest */
+.vendorChecks input[type="checkbox"] {
+    height: 4.5vh;
+    width: 4.5vh;
+    cursor: pointer;
+}
+
+/* since the horizontal line is the only one im gonna use i put it in the middle of the div instead of in either one of the checkbox divs so that it could be perfectly centered */
+hr{
+    color: #78dba2;
+    width: 25%;
+    margin-top: 3vh;
+    text-align: center;
+}
+
+/* Align the labels above the checkboxes and set their text properties */
+.vendorChecks label {
+    display: block;
+    cursor: pointer;
+    font-size: 2.4vh;
+}
+
+/* Some spacing between the div tags im so mad that I have to use more divs BUT as I explained in the HTML, the UL>LI tags make it so that its ever so slightly off center because the bullet point still takes up space on the page :')*/
+.vendorChecks div {
+    width: 6.5vw;
+    margin: 0 10px;
+}
+
+
+/* This sets the spacing between the input and select items and makes them look pretty */
+.userContent input, select{
+    margin-bottom: 1vh;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+}
+
+/* These are mostly individual sizing changes, there is probably a better way to do this */
+#emailField {
+    width: 61%;
+    padding: 10px 5px;
+}
+
+#phoneNumField{
+    width: 20%;
+    padding: 10px 5px;
+}
+
+#areaChoice {
+    width: 25%;
+    padding: 10px 2px;
+    text-align: center;
+}
+
+#provChoice{
+    width: 15%;
+    text-align: center;
+    padding: 10px 5px;
+}
+
+/* another div lol, this is necessary though because the rest of the page is one row so this is another div underneath the row, in the center of the page */
+.finalBtnClass {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+/* More button css, make it bigger, make it look better, make it responsive to size ish */
+#finalBtn{
+    text-align: center;
+    padding: .5vh 1.5vw;
+    font-weight: 900;
+    font-size: 2.5vh;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    margin:2vh ;
+}
+
+/* Hover time */
+#finalBtn:hover {
+    background-color: #78dba2;
+}
+
+/* Just straight up .incomplete would not work here and I don't know why so now i have two :')  */
+select.incomplete {
+    background-color: #c54e57;
+}
+
+input.incomplete {
+    background-color: #c54e57;
+}

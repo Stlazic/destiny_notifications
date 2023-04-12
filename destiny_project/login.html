@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Destiny Notifications</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Yes this page is useless right now BUT it will be useful in the future, its going to check the database directly to see if this particular user has already signed up to recieve notifications then if so, the notification page will autofill the users previous selections -->
+    <div class="formContainer">
+        <div class="header">
+            <h2>Log in to your Bungie Account to edit</h2>
+        </div>
+
+        <div class="formContent">
+            <div class="inputBox">
+                <input type="text" placeholder="Username Ex. Gam3rG0d" id="username">
+            </div>
+
+            <div class="inputBox">
+                <input type="text"placeholder="Numbers after # Ex. 1234" id="numbers" maxlength="4" minlength="4">
+            </div>
+
+            <input type="button" value="Log In" id="subBtn">
+
+        </div>
+        <p><a href="/signin.html">I have not signed up for notifications</a></p>
+    </div>  
+    
+    <script src="js/scripts.js"></script>
+</body>
+</html>
