@@ -375,7 +375,7 @@ function getUserContact() {
             });
         }
 
-        var bigPhoneNum = "(" + areaVal + ")" + " "+ phoneNumValue 
+        var bigPhoneNum = "(" + areaVal + ")" + phoneNumValue 
         const membershipId = localStorage.getItem("memberID")
 
         POST(emailValue, bigPhoneNum, providerValue, membershipId, vendorVal)
@@ -401,7 +401,7 @@ async function POST(uName, pNum, provider, membership, vendorVal){
     });
     if (response.ok) {
         console.log(response.text());
-        // location.href = "/thanks.html"
+        location.href = "/thanks.html"
     }
     else {     
         console.log("failed");
